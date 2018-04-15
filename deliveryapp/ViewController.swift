@@ -47,6 +47,20 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         })
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        myIndex = indexPath.row
+        performSegue(withIdentifier: "toPay", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue,sender:Any?) {
+        if segue.identifier == "toPay" {
+            if let guest = segue.destination as? SubmitViewController{
+                guest.DishesName = postData[myIndex].ID
+            }
+        }
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postData.count
     }

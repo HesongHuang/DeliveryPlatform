@@ -24,6 +24,8 @@ class SubmitViewController: UIViewController{
     
     @IBOutlet weak var Requirement: UITextField!
     
+    var DishesName:String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
@@ -36,11 +38,12 @@ class SubmitViewController: UIViewController{
     }
   
     @IBAction func Submit(_ sender: Any) {
-        ref?.child("Order").child("Name").setValue(ClientName.text!)
+        ref?.child("Order").child("UserName").setValue(ClientName.text!)
         ref?.child("Order").child("Address").setValue(ClientAddress.text!)
         ref?.child("Order").child("CardNumber").setValue(CardNumber.text!)
         ref?.child("Order").child("Password").setValue(ClientName.text!)
         ref?.child("Order").child("Requirement").setValue(Requirement.text!)
+        ref?.child("Order").child("ID").setValue(DishesName)
     }
     
     

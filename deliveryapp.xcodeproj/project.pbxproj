@@ -16,7 +16,6 @@
 		CC5AB9A0207AF8C20038A0B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5AB99F207AF8C20038A0B4 /* ViewController.swift */; };
 		CC5AB9A3207AF8C20038A0B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5AB9A1207AF8C20038A0B4 /* Main.storyboard */; };
 		CC5AB9A5207AF8C20038A0B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC5AB9A4207AF8C20038A0B4 /* Assets.xcassets */; };
-		CC5AB9A8207AF8C20038A0B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5AB9A6207AF8C20038A0B4 /* LaunchScreen.storyboard */; };
 		CC5AB9B3207AF8C20038A0B4 /* deliveryappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5AB9B2207AF8C20038A0B4 /* deliveryappTests.swift */; };
 		CC5AB9BE207AF8C20038A0B4 /* deliveryappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5AB9BD207AF8C20038A0B4 /* deliveryappUITests.swift */; };
 		CC5AB9CC207AFA310038A0B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC5AB9CB207AFA310038A0B4 /* GoogleService-Info.plist */; };
@@ -57,7 +56,6 @@
 		CC5AB99F207AF8C20038A0B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CC5AB9A2207AF8C20038A0B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC5AB9A4207AF8C20038A0B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CC5AB9A7207AF8C20038A0B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC5AB9A9207AF8C20038A0B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC5AB9AE207AF8C20038A0B4 /* deliveryappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = deliveryappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5AB9B2207AF8C20038A0B4 /* deliveryappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deliveryappTests.swift; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 				CC0B503E20828F5700C5D16D /* Tablecell.swift */,
 				CC5AB9A4207AF8C20038A0B4 /* Assets.xcassets */,
 				CCF1F225207D1AE900D1CAD8 /* SubmitViewController.swift */,
-				CC5AB9A6207AF8C20038A0B4 /* LaunchScreen.storyboard */,
 				CC5AB9CB207AFA310038A0B4 /* GoogleService-Info.plist */,
 				CC5AB9A9207AF8C20038A0B4 /* Info.plist */,
 			);
@@ -291,7 +288,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC5AB9A8207AF8C20038A0B4 /* LaunchScreen.storyboard in Resources */,
 				CC5AB9CC207AFA310038A0B4 /* GoogleService-Info.plist in Resources */,
 				CC5AB9A5207AF8C20038A0B4 /* Assets.xcassets in Resources */,
 				CC5AB9A3207AF8C20038A0B4 /* Main.storyboard in Resources */,
@@ -447,14 +443,6 @@
 				CC5AB9A2207AF8C20038A0B4 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CC5AB9A6207AF8C20038A0B4 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CC5AB9A7207AF8C20038A0B4 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

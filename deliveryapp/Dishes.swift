@@ -10,14 +10,15 @@ import Foundation
 import FirebaseDatabase
 
 struct Dishes{
-   
+    let ID:String!
     let image:String!
     let image1:String!
     let price: String!
     let introduction:String!
     let itemRef: DatabaseReference?
-    init(image:String,image1:String,price:String,introduction:String)
+    init(ID:String,image:String,image1:String,price:String,introduction:String)
     {
+        self.ID = ID
         self.image = image
         self.image1 = image1
         self.price = price
@@ -28,6 +29,13 @@ struct Dishes{
     {
         itemRef = snapshot.ref
         let snapshotValue = snapshot.value as? NSDictionary
+        if let DishesID = snapshotValue?["ID"] as? String
+        {
+            ID = DishesID
+        }else
+        {
+            ID = ""
+        }
         if let productImage = snapshotValue?["image"] as? String
         {
             image = productImage
@@ -57,8 +65,5 @@ struct Dishes{
             price = ""
         }
         
-    }
-    func toAnyObject() -> Any {
-        return ["image":image,"image1":image1,"price":price,"introduction":introduction]
     }
 }
