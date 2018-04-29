@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Etn-TF-ObQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NgK-aZ-2dK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -51,6 +51,14 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNv-ab-4Yv">
+                                <rect key="frame" x="298" y="26" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="Logout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fS-jO-0xe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -226,8 +234,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="Login:" destination="NgK-aZ-2dK" eventType="touchUpInside" id="twT-sP-ak2"/>
-                                    <action selector="SignInButtonClicked:" destination="NgK-aZ-2dK" eventType="touchUpInside" id="1xF-OV-IYl"/>
+                                    <action selector="Login:" destination="NgK-aZ-2dK" eventType="touchUpInside" id="Grg-jM-ir8"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B7L-fb-owG">
@@ -238,21 +245,28 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxt-dG-tI5">
-                                <rect key="frame" x="31" y="269" width="46" height="21"/>
+                                <rect key="frame" x="0.0" y="223" width="46" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZS-P1-4lX">
-                                <rect key="frame" x="13" y="348" width="79" height="21"/>
+                                <rect key="frame" x="0.0" y="292" width="79" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SignIn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHl-GP-noy">
+                                <rect key="frame" x="153" y="181" width="69" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="geu-CH-PCK">
-                                <rect key="frame" x="129" y="163" width="129" height="29"/>
+                                <rect key="frame" x="100" y="156" width="129" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Sign In">
@@ -262,31 +276,18 @@
                                 </segments>
                                 <color key="tintColor" red="1" green="0.58020398446036037" blue="0.15947256344152427" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <action selector="SignorRegister:" destination="NgK-aZ-2dK" eventType="valueChanged" id="KJs-oc-Z1M"/>
+                                    <action selector="SigninRegister:" destination="NgK-aZ-2dK" eventType="valueChanged" id="oUQ-wV-wbM"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SignIn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHl-GP-noy">
-                                <rect key="frame" x="172" y="207" width="69" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="gjf-KU-3ch"/>
                     </view>
                     <connections>
-                        <outlet property="Email" destination="1q4-Kf-dgc" id="6Pf-ZJ-6kR"/>
                         <outlet property="EmailTextField" destination="1q4-Kf-dgc" id="zlP-cw-EAV"/>
-                        <outlet property="Login" destination="8jW-Wv-tjg" id="veu-VF-nvp"/>
+                        <outlet property="Login" destination="8jW-Wv-tjg" id="fLc-DC-EYY"/>
                         <outlet property="LoginLabel" destination="DHl-GP-noy" id="QnP-yR-gmX"/>
-                        <outlet property="Password" destination="B7L-fb-owG" id="bx4-P9-xD7"/>
                         <outlet property="PasswordTextField" destination="B7L-fb-owG" id="CEQ-M5-1vH"/>
-                        <outlet property="SignInButtonClicked" destination="8jW-Wv-tjg" id="jsd-Kj-gI8"/>
-                        <outlet property="SigninorRegister" destination="geu-CH-PCK" id="vjC-Fa-3Sk"/>
-                        <outlet property="SignorRegister" destination="geu-CH-PCK" id="tQh-eg-r7F"/>
-                        <segue destination="Etn-TF-ObQ" kind="show" id="tbq-6K-DSV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="faf-jD-GzX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -316,6 +317,6 @@
         <image name="LoginPage" width="960" height="640"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HQx-QW-r6O"/>
+        <segue reference="30d-yh-u7p"/>
     </inferredMetricsTieBreakers>
 </document>

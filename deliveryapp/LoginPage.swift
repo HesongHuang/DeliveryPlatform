@@ -6,11 +6,9 @@
 //  Copyright © 2018年 Hesong Huang. All rights reserved.
 //
 
-import Foundation
+
 import UIKit
-import FirebaseDatabase
 import Firebase
-import FirebaseAuth
 
 class LoginVC : UIViewController{
     
@@ -18,9 +16,9 @@ class LoginVC : UIViewController{
     
     @IBOutlet weak var PasswordTextField: UITextField!
     
+  
     @IBOutlet weak var Login: UIButton!
     
-    @IBOutlet weak var SignorRegister: UISegmentedControl!
     
     @IBOutlet weak var LoginLabel: UILabel!
     
@@ -30,9 +28,7 @@ class LoginVC : UIViewController{
     
     var isSignIn:Bool = true
     
-    var handle: AuthStateDidChangeListenerHandle?
-    
-    @IBAction func SignorRegister(_ sender: Any) {
+    @IBAction func SigninRegister(_ sender: Any) {
         isSignIn = !isSignIn
         if isSignIn {
             LoginLabel.text = "Sign In"
@@ -45,15 +41,16 @@ class LoginVC : UIViewController{
     }
     
    
-    @IBAction func SignInButtonClicked(_ sender: Any) {
-        if let email = EmailTextField.text, let password = PasswordTextField.text
+
+    @IBAction func Login(_ sender: Any) {
+        if EmailTextField.text != "" && PasswordTextField.text != ""
         {
             if isSignIn{
-                Auth.auth().signIn(withEmail: email, password: password,completion: {
+                Auth.auth().signIn(withEmail: EmailTextField.text!, password: PasswordTextField.text!,completion: {
                     (user, error) in
                     if user != nil {
-                       //Sign in successful
-                        self.performSegue(withIdentifier: "segue", sender: self)
+                        //Sign in successful
+                        //self.performSegue(withIdentifier: "segue", sender: self)
                     }
                     else
                     {
@@ -66,24 +63,25 @@ class LoginVC : UIViewController{
                     }
                 })
             }else{
-                Auth.auth().createUser(withEmail: email, password: password, completion:{ (user,error) in
+                Auth.auth().createUser(withEmail: EmailTextField.text!, password: PasswordTextField.text!, completion:{ (user,error) in
                     if user != nil
                     {
-                        self.performSegue(withIdentifier: "segue", sender: self)
+                        //self.performSegue(withIdentifier: "segue", sender: self)
                     }else{
                         if let myError = error?.localizedDescription{
                             print(myError)
                         }else{
-                        print("ERROR")
+                            print("ERROR")
                         }
-                   }
+                    }
                 } )
             }
             
         }else{
-            
+            print("Error")
             
         }
     }
+    
     
 }
