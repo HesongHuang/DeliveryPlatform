@@ -316,10 +316,35 @@
             </objects>
             <point key="canvasLocation" x="-1911.2" y="-63.418290854572717"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="igW-UK-NDv">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UtZ-Zj-tNc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="8Nn-HS-wFq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YTm-6j-gy3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="orderfood" translatesAutoresizingMaskIntoConstraints="NO" id="qji-cI-IG0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fbw-bk-sfz">
+                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="Qcp-40-HRN"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-957.60000000000002" y="502.39880059970017"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="FPQ-PG-abv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9PB-52-9vF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Etn-TF-ObQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gI4-Tr-OvY">
@@ -331,8 +356,9 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="30d-yh-u7p"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9PB-52-9vF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1100" y="342.27886056971516"/>
+            <point key="canvasLocation" x="-15" y="-1173"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ORf-6R-yLn">
@@ -355,8 +381,10 @@
     </scenes>
     <resources>
         <image name="LoginPage" width="960" height="640"/>
+        <image name="orderfood" width="342" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WZg-B5-yjv"/>
+        <segue reference="DUc-PI-1YS"/>
+        <segue reference="30d-yh-u7p"/>
     </inferredMetricsTieBreakers>
 </document>
