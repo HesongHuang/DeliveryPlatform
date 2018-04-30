@@ -23,12 +23,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet weak var tableView: UITableView!
     
   
-    
-    @IBAction func Logout(_ sender: UIButton) {
-        try!Auth.auth().signOut()
-        performSegue(withIdentifier: "segue2", sender: self)
-    }
-    
     var ref: DatabaseReference?
     var databaseHandle:DatabaseHandle?
     override func viewDidLoad() {
