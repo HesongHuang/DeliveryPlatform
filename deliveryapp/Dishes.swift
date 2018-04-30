@@ -9,61 +9,62 @@
 import Foundation
 import FirebaseDatabase
 
+
+
 struct Dishes{
-    let ID:String!
+    let Flavor:String!
     let image:String!
-    let image1:String!
-    let price: String!
-    let introduction:String!
+    let price: Double!
+    let ingredient:String!
+    let Name: String!
     let itemRef: DatabaseReference?
-    init(ID:String,image:String,image1:String,price:String,introduction:String)
+    init(Flavor:String,image:String,price:Double,ingredient:String,Name:String)
     {
-        self.ID = ID
+        self.Flavor = Flavor
         self.image = image
-        self.image1 = image1
         self.price = price
-        self.introduction = introduction
+        self.ingredient = ingredient
         self.itemRef = nil
+        self.Name = Name
     }
     init (snapshot:DataSnapshot)
     {
         itemRef = snapshot.ref
         let snapshotValue = snapshot.value as? NSDictionary
-        if let DishesID = snapshotValue?["ID"] as? String
+        if let DishesFlavor = snapshotValue?["Flavor"] as? String
         {
-            ID = DishesID
+            Flavor = DishesFlavor
         }else
         {
-            ID = ""
+            Flavor = ""
         }
-        if let productImage = snapshotValue?["image"] as? String
+        if let productImage = snapshotValue?["Image"] as? String
         {
             image = productImage
         }else
         {
             image = ""
         }
-        if let productImage1 = snapshotValue?["image1"] as? String
+        if let productingredient = snapshotValue?["Ingredient"] as? String
         {
-            image1 = productImage1
+            ingredient = productingredient
         }else
         {
-            image1 = ""
+            ingredient = ""
         }
-        if let productIntroduction = snapshotValue?["introduction"] as? String
+        if let DishesPrice = snapshotValue?["Price"] as? Double
         {
-            introduction = productIntroduction
+            price = DishesPrice
         }else
         {
-            introduction = ""
+            price = 0
         }
-        if let productPrice = snapshotValue?["price"] as? String
+        if let productName = snapshotValue?["Name"] as? String
         {
-            price = productPrice
+            Name = productName
         }else
         {
-            price = ""
+            Name = ""
         }
-        
     }
 }

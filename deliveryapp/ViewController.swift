@@ -11,14 +11,24 @@ import FirebaseDatabase
 var myIndex = 0
 var postData = [Dishes]()
 import FirebaseAuth
+
+struct Restaurants{
+    var Dishs = [Dishes]()
+    let info: Info
+    var Orders: Orders
+}
+
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
-    @IBAction func Logout(_ sender: Any) {
+  
+    
+    @IBAction func Logout(_ sender: UIButton) {
         try!Auth.auth().signOut()
         performSegue(withIdentifier: "segue2", sender: self)
     }
+    
     var ref: DatabaseReference?
     var databaseHandle:DatabaseHandle?
     override func viewDidLoad() {
@@ -27,7 +37,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         tableView.delegate = self
         tableView.rowHeight = 370
         tableView.dataSource = self
-        ref = Database.database().reference().child("Dishes")
+        ref = Database.database().reference().child("Restaurants").child("NVayeSmP3OR9RsKbYw0zMNZt11J3").child("Dishes")
         ref?.observe(.value, with: {(snapshot:DataSnapshot) in
             var newDishes = [Dishes]()
             for products in snapshot.children{
@@ -60,7 +70,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     override func prepare(for segue: UIStoryboardSegue,sender:Any?) {
         if segue.identifier == "toPay" {
             if let guest = segue.destination as? SubmitViewController{
-                guest.DishesName = postData[myIndex].ID
+                guest.DishesName = postData[myIndex].Name
+                guest.Price = postData[myIndex].price
+                print("The price is :" + String(postData[myIndex].price))
             }
         }
         
@@ -75,7 +87,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let url = URL(string:postData[indexPath.row].image)
         let data = try? Data(contentsOf: url!)
         cell.myImage.image = UIImage(data: data!)
-        cell.myLabel.text = postData[indexPath.row].introduction
+        cell.myLabel.text = postData[indexPath.row].ingredient
         return cell
     }
     

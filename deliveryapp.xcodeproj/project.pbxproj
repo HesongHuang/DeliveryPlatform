@@ -10,6 +10,8 @@
 		57C262EDAEB172D4C1EF5EAA /* Pods_deliveryappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F1948681FAE1206489CD0F5 /* Pods_deliveryappTests.framework */; };
 		7F9F6F90293C515B00442F4A /* Pods_deliveryappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02FBE3DED41109C2AAC006C1 /* Pods_deliveryappUITests.framework */; };
 		A0F0EA2745B4E9B2346910D5 /* Pods_deliveryapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E7744BAC855B0A8A45BB3D /* Pods_deliveryapp.framework */; };
+		CC026D9E209690AD005796CF /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC026D9D209690AD005796CF /* Info.swift */; };
+		CC026DA0209691C9005796CF /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC026D9F209691C9005796CF /* Order.swift */; };
 		CC0B503D208256A200C5D16D /* Dishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0B503C208256A200C5D16D /* Dishes.swift */; };
 		CC0B503F20828F5700C5D16D /* Tablecell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0B503E20828F5700C5D16D /* Tablecell.swift */; };
 		CC5AB99E207AF8C20038A0B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5AB99D207AF8C20038A0B4 /* AppDelegate.swift */; };
@@ -49,6 +51,8 @@
 		B3EFE24FBA49D42E20DDBDE9 /* Pods-deliveryapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-deliveryapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-deliveryapp/Pods-deliveryapp.release.xcconfig"; sourceTree = "<group>"; };
 		B6FD753BAC796273DE73D848 /* Pods-deliveryappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-deliveryappTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-deliveryappTests/Pods-deliveryappTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C42B4A405B95E0F9646809BC /* Pods-deliveryappUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-deliveryappUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-deliveryappUITests/Pods-deliveryappUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CC026D9D209690AD005796CF /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		CC026D9F209691C9005796CF /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		CC0B503C208256A200C5D16D /* Dishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dishes.swift; sourceTree = "<group>"; };
 		CC0B503E20828F5700C5D16D /* Tablecell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tablecell.swift; sourceTree = "<group>"; };
 		CC5AB99A207AF8C20038A0B4 /* deliveryapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = deliveryapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +153,8 @@
 				CC5AB99D207AF8C20038A0B4 /* AppDelegate.swift */,
 				CC5AB99F207AF8C20038A0B4 /* ViewController.swift */,
 				CC0B503C208256A200C5D16D /* Dishes.swift */,
+				CC026D9D209690AD005796CF /* Info.swift */,
+				CC026D9F209691C9005796CF /* Order.swift */,
 				CC5AB9A1207AF8C20038A0B4 /* Main.storyboard */,
 				CC0B503E20828F5700C5D16D /* Tablecell.swift */,
 				CC5AB9A4207AF8C20038A0B4 /* Assets.xcassets */,
@@ -398,10 +404,12 @@
 			files = (
 				CC0B503F20828F5700C5D16D /* Tablecell.swift in Sources */,
 				CCF1F226207D1AE900D1CAD8 /* SubmitViewController.swift in Sources */,
+				CC026DA0209691C9005796CF /* Order.swift in Sources */,
 				CC0B503D208256A200C5D16D /* Dishes.swift in Sources */,
 				CC5AB9A0207AF8C20038A0B4 /* ViewController.swift in Sources */,
 				CCF1F220207B04BE00D1CAD8 /* LoginPage.swift in Sources */,
 				CC5AB99E207AF8C20038A0B4 /* AppDelegate.swift in Sources */,
+				CC026D9E209690AD005796CF /* Info.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

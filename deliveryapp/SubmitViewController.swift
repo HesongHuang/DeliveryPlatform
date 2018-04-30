@@ -24,26 +24,56 @@ class SubmitViewController: UIViewController{
     
     @IBOutlet weak var Requirement: UITextField!
     
+    @IBOutlet weak var Phone: UITextField!
+    
     var DishesName:String!
+    var Price:Double!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ref = Database.database().reference()
+        ref = Database.database().reference().child("Restaurants").child("NVayeSmP3OR9RsKbYw0zMNZt11J3").child("Orders")
         ClientName.delegate = self
         ClientAddress.delegate = self
         CardNumber.delegate = self
         Password.delegate = self
+        Phone.delegate = self
         Requirement.delegate = self
-        // Do any additional setup after loading the view, typically from a nib.
     }
   
+    func getTimeString() -> String{
+        
+        let date = Date()
+        let calender = Calendar.current
+        let components = calender.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
+        
+        let year = components.year
+        let month = components.month
+        let day = components.day
+        let hour = components.hour
+        let minute = components.minute
+        let second = components.second
+        
+        let today_string = String(day!)  + "/" + String(month!) + "/" + String(year!) + " " + String(hour!)  + ":" + String(minute!) + ":" +  String(second!)
+        
+        return today_string
+        
+    }
+
+    
     @IBAction func Submit(_ sender: Any) {
-        ref?.child("Order").child("UserName").setValue(ClientName.text!)
-        ref?.child("Order").child("Address").setValue(ClientAddress.text!)
-        ref?.child("Order").child("CardNumber").setValue(CardNumber.text!)
-        ref?.child("Order").child("Password").setValue(ClientName.text!)
-        ref?.child("Order").child("Requirement").setValue(Requirement.text!)
-        ref?.child("Order").child("ID").setValue(DishesName)
+        let time = getTimeString()
+        let message = [
+            "Address" : ClientAddress.text!,
+            "Customer" : ClientName.text!,
+            "Food" : DishesName,
+            "Phone" : Int(Phone.text!),
+            "Price": Price,
+            "Requirement": Requirement.text!,
+            "Serial": "10007584",
+            "Status":0,
+            "Time":time
+        ] as [String:Any]
+        ref?.childByAutoId().setValue(message)
     }
     
     

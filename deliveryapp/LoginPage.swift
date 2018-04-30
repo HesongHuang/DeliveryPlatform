@@ -50,7 +50,7 @@ class LoginVC : UIViewController{
                     (user, error) in
                     if user != nil {
                         //Sign in successful
-                        //self.performSegue(withIdentifier: "segue", sender: self)
+                        self.performSegue(withIdentifier: "segue", sender: self)
                     }
                     else
                     {
@@ -66,7 +66,7 @@ class LoginVC : UIViewController{
                 Auth.auth().createUser(withEmail: EmailTextField.text!, password: PasswordTextField.text!, completion:{ (user,error) in
                     if user != nil
                     {
-                        //self.performSegue(withIdentifier: "segue", sender: self)
+                        self.performSegue(withIdentifier: "segue", sender: self)
                     }else{
                         if let myError = error?.localizedDescription{
                             print(myError)
