@@ -13,14 +13,14 @@ struct Orders{
     let Address:String!
     let Customer:String!
     let Food: String!
-    let Phone:String!
-    let Price: String!
+    let Phone: Int!
+    let Price: Double!
     let Requirement: String!
     let Serial: Int!
     let Status: Int!
     let Time: String!
     let itemRef: DatabaseReference?
-    init(Address:String!,Customer:String!,Food: String!,Phone:String!,Price: String!,Requirement:String!,Serial: Int!,Status: Int!,Time: String!)
+    init(Address:String!,Customer:String!,Food: String!,Phone:Int!,Price: Double!,Requirement:String!,Serial: Int!,Status: Int!,Time: String!)
     {
         self.Address = Address
         self.Customer = Customer
@@ -33,8 +33,73 @@ struct Orders{
         self.Time = Time
         self.itemRef = nil
     }
-    func toAnyObject() -> Any {
-        return ["Address":Address,"Customer":Customer,"Food":Food,"Phone":Phone,"Price":Price,"Requirement":Requirement,"Serial":Serial,"Status":Status,"Time":Time]
+    init (snapshot:DataSnapshot)
+    {
+        itemRef = snapshot.ref
+        let snapshotValue = snapshot.value as? NSDictionary
+        if let CustomerAddress = snapshotValue?["Address"] as? String
+        {
+            Address = CustomerAddress
+        }else
+        {
+            Address = ""
+        }
+        if let CustomerName = snapshotValue?["Customer"] as? String
+        {
+            Customer = CustomerName
+        }else
+        {
+            Customer = ""
+        }
+        if let OrderFood = snapshotValue?["Food"] as? String
+        {
+            Food = OrderFood
+        }else
+        {
+            Food = ""
+        }
+        if let CustomerPhone = snapshotValue?["Phone"] as? Int
+        {
+            Phone = CustomerPhone
+        }else
+        {
+            Phone = 0
+        }
+        if let CustomerRequirement = snapshotValue?["Requirement"] as? String
+        {
+           Requirement = CustomerRequirement
+        }else
+        {
+            Requirement = ""
+        }
+        if let CustomerSerial = snapshotValue?["Serial"] as? Int
+        {
+            Serial = CustomerSerial
+        }else
+        {
+            Serial = 0
+        }
+        if let OrderTime = snapshotValue?["Time"] as? String
+        {
+            Time = OrderTime
+        }else
+        {
+            Time = ""
+        }
+        if let FoodPrice = snapshotValue?["Price"] as? Double
+        {
+            Price = FoodPrice
+        }else
+        {
+            Price = 0.0
+        }
+        if let FoodStatus = snapshotValue?["Status"] as?  Int
+        {
+            Status = FoodStatus
+        }else
+        {
+            Status = 0
+        }
     }
 }
 

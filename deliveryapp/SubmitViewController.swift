@@ -69,7 +69,7 @@ class SubmitViewController: UIViewController{
             "Phone" : Int(Phone.text!),
             "Price": Price,
             "Requirement": Requirement.text!,
-            "Serial": "10007584",
+            "Serial": 10007584,
             "Status":0,
             "Time":time
         ] as [String:Any]
