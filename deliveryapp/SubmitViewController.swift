@@ -10,6 +10,12 @@ import Foundation
 import UIKit
 import FirebaseDatabase
 
+extension Date {
+    func toMillis() -> Int64! {
+        return Int64(self.timeIntervalSince1970 * 1000)
+    }
+}
+
 class SubmitViewController: UIViewController{
     
     var ref:DatabaseReference?
@@ -58,10 +64,12 @@ class SubmitViewController: UIViewController{
         return today_string
         
     }
-
+    
+  
     
     @IBAction func Submit(_ sender: Any) {
         let time = getTimeString()
+        let serial = Date().toMillis()
         let message = [
             "Address" : ClientAddress.text!,
             "Customer" : ClientName.text!,
@@ -69,7 +77,7 @@ class SubmitViewController: UIViewController{
             "Phone" : Int(Phone.text!),
             "Price": Price,
             "Requirement": Requirement.text!,
-            "Serial": 10007584,
+            "Serial": serial,
             "Status":0,
             "Time":time
         ] as [String:Any]

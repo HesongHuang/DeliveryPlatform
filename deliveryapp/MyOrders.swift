@@ -57,6 +57,8 @@ class MyOrdersViewController: UIViewController,UITableViewDelegate,UITableViewDa
         if status == 3 {
             cell.Status.text = "Your order is delivered"
         }
+        cell.OrderPrice.text = String(postOrders[indexPath.row].Price)
+        cell.PlacedTime.text = postOrders[indexPath.row].Time
         return cell
     }
 }
